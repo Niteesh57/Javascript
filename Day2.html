@@ -28,8 +28,17 @@
         }
 
     </script> -->
+    <button id="But" onfocus="Hilight(this)">Click On</button>
+    <!-- <script>
+        function SayHi(){
+            return console.log("Hello")
+        }
+        document.getElementById("But").onclick = SayHi
+    </script> -->
     <script>
-        
+        function Hilight(element){
+            element.style.backgroundColor = "red"
+        }
     </script>
 </body>
 </html>
