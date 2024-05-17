@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- <script>
+        var str1 = "Color color is"
+        var str2 = str1.search("color")
+        var str3 = str1.search(/color/i)
+        document.write(str3)
+        document.write(str2)
+    </script> -->
+    <!-- <script>
+        var str1 = "Color color is color"
+        // document.write(str1.slice(2,9))
+        var str2 = str1.replace("color", "red")
+        document.write(str2)
+    </script> -->
+    <script>
+        var str1 = "Color color is color"
+        str2 = str1.split(" ")
+        function write(str){
+            for (i in str){
+                document.write(str[i])
+            }
+        }
+        write(str2)
+    </script>
+</body>
+</html>
