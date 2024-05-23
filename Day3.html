@@ -22,9 +22,32 @@
         var x = 73.000001
         document.write(x.toFixed())
     </script> -->
-    <script>
+    <!-- <script>
         var day = new Date
         document.write(day.getDay())
+    </script> -->
+    <!-- <script>
+        var c = new Date()
+        var a = c.getDate()
+        if (a==20){
+            console.log("True")
+        }
+        else{
+            console.log("False")
+        }
+        var x = 18
+        var y = (x<18) ? 'child':'adult'
+        document.write(y)
+    </script> -->
+    <script>
+        var a = ['a','b','c','d','e']
+        a.unshift('f','g')
+        a.push('h','i')
+        var x = a.splice(0,3,'2','3','4')
+        for (i=0;i<a.length;i++){
+            document.write(a[i], '<br>')
+        }
+        document.write(x)
     </script>
 </body>
 </html>
