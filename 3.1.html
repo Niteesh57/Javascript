@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- <script>
+        c = [1,2,3,4,5,4]
+        d = [6,7,8]
+        e = [9,10,11]
+        document.write(c.join(),"<br>")
+        document.write(c.join(" "),"<br>")
+        document.write(c.join("-"),'<br>')
+        document.write(c.slice(1,3),'<br>')
+        document.write(c.concat(d,e),'<br>')
+        document.write(c.indexOf(5,5),'<br>')
+        document.write(c.lastIndexOf(4),'<br>')
+    </script> -->
+    <script>
+        var arr = [1,2,3,4,5,4,100];
+        var x = arr.filter((e)=>{
+            return e > 3
+        })
+        x.sort((a,b)=>{
+            return a-b;
+        })
+        document.write(x)
+    </script>
+</body>
+</html>
