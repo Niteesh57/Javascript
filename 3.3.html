@@ -6,6 +6,29 @@
     <title>Document</title>
 </head>
 <body>
+    <!-- <script>
+        var person = {
+            name: "John",
+            age: 30,
+            display : function (){
+                console.log("Name: " + this.name + ", Age: " + this.age);
+            }
+        }
+        person.display();
+        document.write(person['display'])
+    </script> -->
+    <script>
+        var person = {
+            name: "John",
+            age: 30,
+            city: 'HYD',
+        }
+        delete person.age;
+        document.write(person.age + " ")
+        for (var key in person){
+            document.write(key + " : " + person[key] + " ");
+            }
+    </script>
     
 </body>
 </html>
