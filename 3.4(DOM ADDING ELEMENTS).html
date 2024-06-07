@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id ="div">
+        <h1>nkncvesnvnav</h1>
+    </div>
+    <button type="button" onclick="div()">Create</button>
+    <script>
+        // function div(){
+        //     var div = document.createElement("div");
+        //     div.innerHTML = "<h1>new div</h1>";
+        //     document.body.appendChild(div);
+        // }
+
+        function div(){
+            var div = document.createElement("div");
+            var newCreate = document.createTextNode('s ac sac as c');
+            div.appendChild(newCreate);
+            var add = document.getElementById('div');
+            document.body.appendChild(div,add);
+            document.body.insertBefore(div,add);
+
+        }
+
+        // function div(){
+        //     var div = document.createElement("div");
+        //     var newCreate = document.createTextNode('s ac sac as c');
+        //     div.appendChild(newCreate);
+        //     var container = document.querySelector('.div');
+        //     container.appendChild(div);
+        // }
+
+
+    </script>
+    
+</body>
+</html>

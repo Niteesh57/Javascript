@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="class">
+        <p id="text">Hello World!</p>
+    </div>
+    <button type="button" onclick="get()">Elements</button>
+    <script>
+        function get(){
+            var div = document.getElementById('class');
+            div.insertAdjacentHTML('beforebegin','<h1>hi 1</h1>')
+            div.insertAdjacentHTML('afterbegin','<h1>hi 2</h1>')
+            div.insertAdjacentHTML('beforeend','<h1>hi 3</h1>')
+            div.insertAdjacentHTML('afterend','<h1>hi 4</h1>')
+        }
+    </script>
+</body>
+</html>
