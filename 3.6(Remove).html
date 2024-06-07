@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="main">
+        <h1>hi</h1>
+        <p id="para">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Molestiae excepturi dolor iste inventore natus blanditiis officiis. Totam nam dolorem veniam dolores voluptatum ea assumenda, rem accusantium sed. A quisquam ipsa in iure iusto?</p>
+    </div>
+    <script>
+        var c = document.getElementById('main');
+        var x = document.getElementById('para');
+
+        var a = document.getElementsByTagName('h1');
+        // var b = document.querySelector('.main');
+
+        x.parentNode.removeChild(x) //delete
+        c.removeChild(a[0])
+    </script>
+</body>
+</html>

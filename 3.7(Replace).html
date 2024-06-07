@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="main">
+        <h1 class="n">Hello</h1>
+    </div>
+    <button type="button" onclick="replace()">Button</button>
+    <script>
+        function replace() {
+            var a = document.querySelector('.main')
+            var b = document.querySelector('.n')
+
+            c = document.createElement('p')
+            x = document.createTextNode('Hi hello')
+            x.setAtt
+            c.appendChild(x)
+
+            a.replaceChild(c,b)
+            }
+    </script>
+</body>
+</html>
