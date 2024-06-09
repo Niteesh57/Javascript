@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="main">
+        <h1><span>n s csanc as c </span></h1>
+        <h2 id="new">scac;lsaca</h2><hr>
+        <button type="button" onclick="java()">Click</button>
+        <button type="button" onclick="inter()">Click</button>
+
+    </div>
+    <!-- <script>
+        var main = document.getElementById('main')
+        console.log(main.firstChild.nodeName)
+        var h1 = main.querySelector('h1')
+        console.log(h1.firstChild.nodeName)
+    </script> -->
+    <!-- <script>
+        var main = document.getElementById('main')
+        if (main.hasChildNodes){
+            node = main.children
+        for (i=0;i<node.length;i++){
+            console.log(node[i].nodeName)
+        }
+        }
+    </script> -->
+    <!-- <script>
+        var main = document.getElementById('main')
+        document.write(main)
+        console.log(main.parentNode.nodeName)
+        console.log(main.childNodes)
+        console.log(main.children)
+        console.log(document.documentElement.parentNode.nodeName)
+        console.log(document.parentNode)
+    </script> -->
+    <!-- <script>
+        var main = document.getElementById('new')
+        console.log(main.previousElementSibling)
+        console.log(main.nextElementSibling.nodeName)
+        function java(){
+            main.nextElementSibling.remove()
+            alert(window.navigator.javaEnabled())
+        }
+    </script> -->
+    <script>
+        function java(){
+            time = setInterval(times,2000)
+            function times(){
+                alert("Hello")
+                }
+            }
+
+        function inter(){
+            clearInterval(time)
+        }
+    </script>
+</body>
+</html>
