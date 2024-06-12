@@ -1,0 +1,47 @@
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=\, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="new">
+        <h1 id="title">Welcome to my website
+            <p id="para">This is a paragraph of text.</p>
+        </h1>
+    </div>
+    <script>    
+        let title = document.querySelectorAll('div,h1,p')
+        for (var l of title){
+            l.addEventListener('click',add)
+        }
+
+        function add(){
+            alert(this.tagName);
+            // let newPara = document.createElement("p");
+            // newPara.textContent = "This is a new paragraph of text.";
+            // document.getElementById("title").appendChild(newPara);
+        }
+    </script>
+</body>
+</html> -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1 id="size"></h1>
+    <script>
+        function s() {
+            var x = window.innerHeight;
+            var y = window.innerWidth;
+            document.getElementById("size").innerHTML = "The size of the window is " + x + " x " + y;
+        }
+        window.addEventListener('resize',s)
+    </script>
+</body>
+</html>
