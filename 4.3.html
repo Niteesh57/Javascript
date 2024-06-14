@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- <script>
+        let arr = [1, 2, 3, 4, 5];
+        var max = Math.max.apply(null,arr);
+        var min = arr.reduce((a,b)=>{
+            return a < b ? a : b
+        })
+        console.log(max);
+        console.log(min);
+
+    </script> -->
+    <!-- <script>
+        document.write(a);
+        var a = 'ncasbnc';
+    </script> -->
+    <!-- <script>
+        function demo(){
+            a = 10
+            console.log(a);
+        }
+        demo();
+        document.write(a,'<br>')
+        document.write(a,'<br>')
+    </script> -->
+    <!-- <script>
+        c = 0;
+        function demo(){
+            c += 1;
+        }
+
+        demo()
+        document.write(c,'<br>')
+        demo()
+        document.write(c,'<br>')
+        c = 25;
+        document.write(c,'<br>')
+    </script> -->
+    <script>
+        function demo(){
+            c = 0; //static varible inslization
+
+            function demo1(){
+                c += 1;
+                return c
+            }
+            return demo1
+        }
+        var res = demo();
+        document.write(res(),'<br>')
+        document.write(res(),'<br>')
+
+
+    </script>
+</body>
+</html>
