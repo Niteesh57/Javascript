@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var json = `{
+            "emp": {
+                "name": "John",
+                "age": 30,
+                "city": "New York",
+                "arry": [1, 2, 3],
+                "obj": {
+                    "a": 1,
+                    "b": 2
+                }
+            }
+        }`;
+        var obj = JSON.stringify(json);
+        console.log(obj);
+
+
+        function jsons(obj){
+            for(var key in obj){
+                if(obj[key] instanceof Object)
+                {
+                    jsons(obj[key]);
+                }
+                else
+                {
+                    document.write(obj[key],"<br>");
+                }
+            }
+        }
+        jsons(obj);
+    </script>
+</body>
+</html>
