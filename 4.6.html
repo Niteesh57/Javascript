@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <!-- <script>
+        // let arr = [1, 2, 3, 4, 5];
+        // try{
+        //     console.log(arr[10]);
+        //     console.log(sxa);
+        // }
+        // catch(err){
+        //     console.log("Error: " + err.message);
+        // }
+        var e = prompt("enter number");
+        var start = Date.now();
+        try {
+            if (e > 10) {
+                throw new Error("Number is too big")
+            }
+            else if (e < 0) {
+                throw new Error("Number is too small")
+            }
+            else {
+                console.log("Number is valid")
+            }
+            console.log(t);
+        }
+        catch (err) {
+            alert("Error: " + err.message)
+        }
+        finally {
+            end = Date.now()
+            console.log("Time taken: " + (end - start) + "ms")
+        }
+    </script> -->
+    <!-- <script>
+        var n = prompt('Enter value');
+
+        try{
+            if(n === "" || n == null || !Number.isInteger(n)){
+                throw new Error("Invalid input")
+            }
+            else{
+                document.write(n)
+            }
+        }
+        catch(e){
+            alert("Error: " + e.message)
+        }
+    </script> -->
+    <script>
+        var n = 12.663;
+        try{
+            n.toFixed(900)
+            document.write(n)
+        }
+        catch(e){
+            alert("Error: " + e.message)
+        }
+    </script>
+</body>
+
+</html>

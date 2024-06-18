@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- <script>
+        m = "MrHi";
+        m1 = /^Mr\./;
+        m2 = new RegExp("^Mr\.");
+        console.log(m1.test(m));
+        console.log(m2.test(m));
+    </script> -->
+    <!-- <script>
+        m = /ca[kf]e/;
+        x = "cake\nin\tcafe"
+        if (m.test(x)){
+            console.log("Matched");
+        }
+        else{
+            console.log("Not matched");
+        }
+    </script> -->
+    <script>
+        x = "cake \nin\tcafe";
+        y = /\s/g;
+        console.log(x.replace(y, "-"));
+        console.log(x.replace(/ /g,"-"))
+    </script>
+</body>
+</html>
