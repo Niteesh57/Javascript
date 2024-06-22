@@ -4,22 +4,29 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <script type="validation.js"></script>
+    <script src="validation.js"></script>
 </head>
 <body>
-    <form onsubmit="validation()">
-        <lable class="name">Name</lable><br>
-        <input id="name" type="text" value="Enter" placeholder="name">
+    <form onsubmit="return validation()">
+        <lable>Name</lable><br>
+        <input class="name" id="name" type="text" placeholder="name">
+        <span class="nameid"></span>
         <br>
-        <lable class="email">Email</lable><br>
-        <input id="email" type="email" value="Enter" placeholder="email">
-        <input type="radio" value="Male">Male<br>
-        <input type="radio" value="Female">Female<br>
+        <lable>Email</lable><br>
+        <input class="email" id="email" type="email" placeholder="email">
+        <span class="emailid"></span>
+        <div>
+            <label>Gender</label>
+            <input type="radio" name="gender" value="Male">Male
+            <input type="radio" name="gender" value="Female">Female<br>
+        </div>
+        <span class="radioid"></span>
         <select id="data">
             <option value="Select" selected>Select</option>
             <option value="India">India</option>
             <option value="USA">USA</option>
         </select>
+        <span class="dataid"></span>
         <input type="submit" value="submit">
     </form>
 </body>
