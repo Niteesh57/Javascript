@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        class PQueue{
+            constructor(ele,priority){
+                this.ele = ele;
+                this.priority = priority;
+            }
+        }
+        class Queue{
+            constructor(){
+                this.data = [];
+            }
+
+            enqueue(ele,priority){
+                let pQueue = new PQueue(ele,priority);
+                var con = false;
+                for(var i = 0; i < this.data.length; i++){
+                    if(this.data[i].priority > pQueue.priority){
+                        this.data.splice(i,0,pQueue);
+                        con = true;
+                        break;
+                    }
+                }
+                if(!con){
+                    this.data.push(pQueue);
+                }
+            }
+            dequeue(){
+                if(this.isEmpty()){
+                    return 'Empty Queue'
+                }
+                return this.data.shift();
+            }
+            peek(){
+                if(this.isEmpty()){
+                    return 'Empty Queue'
+                }
+                return this.data[0].ele;
+            }
+            lengths(){
+                return this.data.length;
+            }
+            isEmpty(){
+                return this.data.length == 0;
+            }
+            display(){
+                for (var i = 0; i < this.data.length; i++){
+                    console.log(this.data[i].ele + ' ' + this.data[i].priority);
+                }
+            }
+        }
+        var Queues = new Queue();
+        Queues.enqueue('A',1);
+        Queues.enqueue('B',2);
+        Queues.enqueue('C',3);
+        Queues.enqueue('E',1);
+        Queues.display();
+        console.log("--")
+        Queues.dequeue();
+        Queues.display();
+        console.log(Queues.peek())
+        console.log(Queues.isEmpty())
+        console.log(Queues.lengths())
+    </script>
+</body>
+</html>
