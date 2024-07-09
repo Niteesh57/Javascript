@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        class Hash{
+            constructor(size=50){
+                this.size = size
+                this.table = new Array(size).fill(null)
+            }
+            
+            hash(key){
+                return key.toString().length % this.size
+            }
+
+            insert(key,value){
+                let index = this.hash(key);
+                if(!this.table[index]){
+                    this.table[index] = []
+                }
+                this.table[index].push({key, value})
+                return index;
+            }
+            
+            get(key){
+                let index = this.hash(key)
+                if(this.table[index]){
+                    for(let item of this.table[index]){
+                        if(item.key === key){
+                            return item.value
+                        }
+                    }
+                }
+                return null
+            }
+            diplay(){
+                for(let i = 0; i < this.table.length; i++){
+                    if(this.table[i]){
+                        console.log(`${i}: ${this.table[i].map(item => `${item.key}:${item.value}`).join(', ')}`)
+                    }
+                    console.log(this.table)
+                }
+            }
+        }
+        console.time()
+        const hash = new Hash(10)
+        hash.insert('one', 1)
+        hash.insert('two', 2)
+        hash.insert('three', 3)
+        hash.insert('four', 4)
+        hash.insert('five', 5)
+
+        hash.diplay()
+        console.log(hash.get('two')) // 2
+        console.timeEnd()
+    </script>
+</body>
+</html>
