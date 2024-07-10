@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        class Node {
+            constructor(data) {
+                this.data = data;
+                this.left = null;
+                this.right = null;
+            }
+        }
+
+        class BST {
+            constructor() {
+                this.root = null;
+            }
+
+            insert(data) {
+                var newNode = new Node(data);
+
+                if (this.root == null) {
+                    this.root = newNode;
+                } else {
+                    this.insertNode(this.root, newNode);
+                }
+            }
+
+            insertNode(nodes, newNode) {
+                if (newNode.data < nodes.data) {
+                    if (nodes.left === null) {
+                        nodes.left = newNode;
+                    } else {
+                        this.insertNode(nodes.left, newNode);
+                    }
+                } else {
+                    if (nodes.right === null) {
+                        nodes.right = newNode;
+                    } else {
+                        this.insertNode(nodes.right, newNode);
+                    }
+                }
+            }
+
+            remove(data) {
+                this.root = this.removeNode(this.root, data);
+            }
+
+            removeNode(nodes, data) {
+                if (nodes == null) {
+                    return null;
+                }
+                if (data < nodes.data) {
+                    nodes.left = this.removeNode(nodes.left, data);
+                    return nodes;
+                } else if (data > nodes.data) {
+                    nodes.right = this.removeNode(nodes.right, data);
+                    return nodes;
+                } else {
+                    if (nodes.left === null && nodes.right === null) {
+                        return null;
+                    } else if (nodes.left === null) {
+                        return nodes.right;
+                    } else if (nodes.right === null) {
+                        return nodes.left;
+                    } else {
+                        var temp = this.minValueNode(nodes.right);
+                        nodes.data = temp.data;
+                        nodes.right = this.removeNode(nodes.right, temp.data);
+                        return nodes;
+                    }
+                }
+            }
+
+            minValueNode(nodes) {
+                while (nodes.left != null) {
+                    nodes = nodes.left;
+                }
+                return nodes;
+            }
+
+            display() {
+                this.inorder(this.root);
+            }
+            inOrder(){
+                console.log("Inorder traversal:");
+                this.inorder(this.root);
+                console.log("");
+            }
+            inorder(nodes) {
+                if (nodes != null) {
+                    this.inorder(nodes.left);
+                    console.log(nodes.data);
+                    this.inorder(nodes.right);
+                }
+            }
+
+            search(data) {
+                return this.searchNode(this.root, data);
+            }
+
+            searchNode(nodes, data) {
+                if (nodes == null || nodes.data == data) {
+                    return nodes != null;
+                }
+                if (data < nodes.data) {
+                    return this.searchNode(nodes.left, data);
+                }
+                return this.searchNode(nodes.right, data);
+            }
+
+            height() {
+                return this.getHeight(this.root);
+            }
+
+            getHeight(nodes) {
+                if (nodes == null) {
+                    return 0;
+                }
+                var leftHeight = this.getHeight(nodes.left);
+                var rightHeight = this.getHeight(nodes.right);
+                return Math.max(leftHeight, rightHeight) + 1;
+            }
+
+            preOrder() {
+                this.preorder(this.root);
+            }
+
+            preorder(nodes) {
+                if (nodes != null) {
+                    console.log(nodes.data);
+                    this.preorder(nodes.left);
+                    this.preorder(nodes.right);
+                }
+            }
+
+            postOrder() {
+                this.postorder(this.root);
+            }
+
+            postorder(nodes) {
+                if (nodes != null) {
+                    this.postorder(nodes.left);
+                    this.postorder(nodes.right);
+                    console.log(nodes.data);
+                }
+            }
+
+            balanced() {
+                return this.isBalanced(this.root);
+            }
+
+            isBalanced(nodes) {
+                if (nodes == null) {
+                    return true;
+                }
+                var leftHeight = this.getHeight(nodes.left);
+                var rightHeight = this.getHeight(nodes.right);
+                if (Math.abs(leftHeight - rightHeight) <= 1 && this.isBalanced(nodes.left) && this.isBalanced(nodes.right)) {
+                    return true;
+                }
+                return false;
+            }
+
+            secondLargest() {
+                return this.secondLargestNode(this.root);
+            }
+
+            secondLargestNode(nodes) {
+                if (nodes == null || (nodes.left == null && nodes.right == null)) {
+                    return null;
+                }
+
+                var parent = null;
+                var current = nodes;
+
+                while (current.right != null) {
+                    parent = current;
+                    current = current.right;
+                }
+
+                if (current.left != null) {
+                    return this.findMax(current.left);
+                }
+
+                return parent;
+            }
+
+            findMax(nodes) {
+                while (nodes.right != null) {
+                    nodes = nodes.right;
+                }
+                return nodes;
+            }
+        }
+
+        var bst = new BST();
+        bst.insert(50);
+        bst.insert(30);
+        bst.insert(20);
+        bst.insert(40);
+        bst.insert(70);
+        bst.insert(60);
+        bst.display();
+        console.log(bst.search(20));
+        console.log(bst.height());
+        console.log(bst.balanced());
+        console.log(bst.secondLargest());
+        bst.remove(20);
+        bst.display();
+        bst.preOrder();
+        bst.inOrder();
+        bst.postOrder();
+    </script>
+</body>
+</html>
